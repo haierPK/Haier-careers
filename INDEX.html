@@ -1,137 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Haier Careers | Job Application Portal</title>
-
-<style>
-
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f2f4f8;
-    margin:0;
-}
-
-.topbar{
-    background:#003a8f;
-    color:white;
-    padding:18px;
-    font-size:22px;
-    font-weight:bold;
-}
-
-.topbar span{
-    font-weight:normal;
-    font-size:16px;
-    margin-left:10px;
-}
-
-.container{
-    width:650px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
-
-h2{
-    margin-top:0;
-}
-
-label{
-    font-weight:bold;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:6px;
-    margin-bottom:16px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-button{
-    width:100%;
-    background:#003a8f;
-    color:white;
-    padding:12px;
-    border:none;
-    border-radius:5px;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#002b6b;
-}
-
-.footer{
-    text-align:center;
-    font-size:12px;
-    color:#777;
-    margin-top:20px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 8px 0;
+            width: 90%;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="topbar">
-Haier Careers Portal <span>| Global Recruitment</span>
+<div class="form-container">
+    <h2>Application Form</h2>
+    <input type="text" id="name" placeholder="Enter your name" required><br>
+    <input type="email" id="email" placeholder="Enter your email" required><br>
+
+    <label for="qualification">Qualification:</label><br>
+    <select id="qualification" required>
+        <option value="">Select Qualification</option>
+        <option value="highschool">High School</option>
+        <option value="bachelor">Bachelor's</option>
+        <option value="master">Master's</option>
+        <option value="other">Other</option>
+    </select><br>
+
+    <input type="text" id="easypaisa" placeholder="Enter Easypaisa number" required><br>
+    <button onclick="submitApplication()">Submit Application</button>
+    <p class="note">* Easypaisa number is mandatory.<br>
+       For more information dial <strong>03132177060</strong></p>
 </div>
 
-<div class="container">
+<script>
+function submitApplication() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const qualification = document.getElementById('qualification').value;
+    const easypaisa = document.getElementById('easypaisa').value;
 
-<h2>Online Job Application</h2>
-
-<form>
-
-<label>Full Name</label> <input type="text" placeholder="Enter full name">
-
-<label>Email Address</label> <input type="email" placeholder="example@email.com">
-
-<label>Phone Number</label> <input type="tel" placeholder="+1 234 567 890">
-
-<label>Country</label> <select>
-
-<option>United States</option>
-<option>United Kingdom</option>
-<option>Canada</option>
-<option>Australia</option>
-<option>Other</option>
-</select>
-
-<label>Position Applying For</label> <select>
-
-<option>Sales Associate</option>
-<option>Customer Support Specialist</option>
-<option>Warehouse Assistant</option>
-<option>Marketing Executive</option>
-<option>Engineering Technician</option>
-</select>
-
-<label>Upload Resume</label> <input type="file">
-
-<label>Additional Information</label>
-
-<textarea rows="4" placeholder="Tell us about yourself"></textarea>
-
-<button type="submit">Submit Application</button>
-
-</form>
-
-<div class="footer">
-© 2026 Haier Global Careers Portal
-</div>
-
-</div>
+    if(name && email && qualification && easypaisa) {
+        window.location.href = "submitted.html";
+    } else {
+        alert("Please fill in all required fields, including Easypaisa number and Qualification.");
+    }
+}
+</script>
 
 </body>
 </html>
+
+
+
