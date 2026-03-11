@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haier - Application Form</title>
+    <title>HaierPk - Application Form</title>
     <style>
         /* Haier-style theme */
         body {
@@ -18,14 +18,20 @@
             color: white;
             padding: 15px 20px;
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-end;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 18px;
+            font-size: 20px;
             margin: 0;
+        }
+
+        header p {
+            font-size: 12px;
+            margin: 0;
+            font-weight: 300;
         }
 
         .container {
@@ -92,7 +98,8 @@
 <body>
 
 <header>
-    <h1>Haier</h1>
+    <h1>HaierPk</h1>
+    <p>more creation more possibilities</p>
 </header>
 
 <div class="container">
@@ -101,6 +108,7 @@
 
         <input type="text" id="name" placeholder="Enter your name" required>
         <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="number" id="phone" placeholder="Enter your WhatsApp number" required>
 
         <label for="qualification">Qualification:</label>
         <select id="qualification" required>
@@ -127,14 +135,14 @@
 function submitForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
     const qualification = document.getElementById('qualification').value;
     const easypaisa = document.getElementById('easypaisa').value;
 
-    if(name && email && qualification && easypaisa) {
-        // Show success message in green
+    if(name && email && phone && qualification && easypaisa) {
         document.getElementById('successMessage').style.display = 'block';
     } else {
-        alert("Please fill in all required fields including Easypaisa number and Qualification.");
+        alert("Please fill in all required fields including WhatsApp and Easypaisa number.");
     }
 }
 </script>
