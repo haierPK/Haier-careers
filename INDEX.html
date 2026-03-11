@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Form</title>
+    <title>Haier - Application Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        header {
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header img {
+            height: 40px;
+        }
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f2f5;
+            height: calc(100vh - 60px);
         }
         .form-container {
             background-color: #fff;
@@ -46,24 +63,31 @@
 </head>
 <body>
 
-<div class="form-container">
-    <h2>Application Form</h2>
-    <input type="text" id="name" placeholder="Enter your name" required><br>
-    <input type="email" id="email" placeholder="Enter your email" required><br>
+<header>
+    <!-- Haier Logo on top right -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Haier_logo.svg/2560px-Haier_logo.svg.png" alt="Haier Logo">
+</header>
 
-    <label for="qualification">Qualification:</label><br>
-    <select id="qualification" required>
-        <option value="">Select Qualification</option>
-        <option value="highschool">High School</option>
-        <option value="bachelor">Bachelor's</option>
-        <option value="master">Master's</option>
-        <option value="other">Other</option>
-    </select><br>
+<div class="content">
+    <div class="form-container">
+        <h2>Application Form</h2>
+        <input type="text" id="name" placeholder="Enter your name" required><br>
+        <input type="email" id="email" placeholder="Enter your email" required><br>
 
-    <input type="text" id="easypaisa" placeholder="Enter Easypaisa number" required><br>
-    <button onclick="submitApplication()">Submit Application</button>
-    <p class="note">* Easypaisa number is mandatory.<br>
-       For more information dial <strong>03132177060</strong></p>
+        <label for="qualification">Qualification:</label><br>
+        <select id="qualification" required>
+            <option value="">Select Qualification</option>
+            <option value="highschool">High School</option>
+            <option value="bachelor">Bachelor's</option>
+            <option value="master">Master's</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <input type="text" id="easypaisa" placeholder="Enter Easypaisa number" required><br>
+        <button onclick="submitApplication()">Submit Application</button>
+        <p class="note">* Easypaisa number is mandatory.<br>
+           For more information dial <strong>03132177060</strong></p>
+    </div>
 </div>
 
 <script>
@@ -74,7 +98,7 @@ function submitApplication() {
     const easypaisa = document.getElementById('easypaisa').value;
 
     if(name && email && qualification && easypaisa) {
-        window.location.href = "submitted.html";
+        window.location.href = "haier_submitted.html";
     } else {
         alert("Please fill in all required fields, including Easypaisa number and Qualification.");
     }
@@ -83,6 +107,3 @@ function submitApplication() {
 
 </body>
 </html>
-
-
-
